@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{738381E3-BA53-8EE0-1640-D0FA9E781B23}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TeleportationScript.cs">
+    <Files>
+      <File FileName="Assets/Scripts/TeleportationScript.cs" Line="26" Column="45" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ded753d3-9687-4f61-a8c2-5e7757a76ecd" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
