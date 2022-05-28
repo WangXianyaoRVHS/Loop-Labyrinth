@@ -284,7 +284,7 @@
         <HintPath>/Applications/Unity/Hub/Editor/2021.2.7f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-        <HintPath>/Users/xianyao/Documents/Programs and Scripts/Unity/Loop Labyrinth/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
+        <HintPath>/Users/xianyao/Documents/GitHub/Loop-Labyrinth/Loop Labyrinth/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>/Applications/Unity/Hub/Editor/2021.2.7f1/Unity.app/Contents/NetStandard/ref/2.1.0/netstandard.dll</HintPath>
@@ -653,34 +653,34 @@
         <HintPath>/Applications/Unity/Hub/Editor/2021.2.7f1/Unity.app/Contents/NetStandard/compat/2.1.0/shims/netfx/mscorlib.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>/Users/xianyao/Documents/Programs and Scripts/Unity/Loop Labyrinth/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>/Users/xianyao/Documents/GitHub/Loop-Labyrinth/Loop Labyrinth/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>/Users/xianyao/Documents/Programs and Scripts/Unity/Loop Labyrinth/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>/Users/xianyao/Documents/GitHub/Loop-Labyrinth/Loop Labyrinth/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>/Users/xianyao/Documents/Programs and Scripts/Unity/Loop Labyrinth/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>/Users/xianyao/Documents/GitHub/Loop-Labyrinth/Loop Labyrinth/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>/Users/xianyao/Documents/Programs and Scripts/Unity/Loop Labyrinth/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>/Users/xianyao/Documents/GitHub/Loop-Labyrinth/Loop Labyrinth/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>/Users/xianyao/Documents/Programs and Scripts/Unity/Loop Labyrinth/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+        <HintPath>/Users/xianyao/Documents/GitHub/Loop-Labyrinth/Loop Labyrinth/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>/Users/xianyao/Documents/Programs and Scripts/Unity/Loop Labyrinth/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+        <HintPath>/Users/xianyao/Documents/GitHub/Loop-Labyrinth/Loop Labyrinth/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>/Users/xianyao/Documents/Programs and Scripts/Unity/Loop Labyrinth/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+        <HintPath>/Users/xianyao/Documents/GitHub/Loop-Labyrinth/Loop Labyrinth/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>/Users/xianyao/Documents/Programs and Scripts/Unity/Loop Labyrinth/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+        <HintPath>/Users/xianyao/Documents/GitHub/Loop-Labyrinth/Loop Labyrinth/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>/Users/xianyao/Documents/Programs and Scripts/Unity/Loop Labyrinth/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+        <HintPath>/Users/xianyao/Documents/GitHub/Loop-Labyrinth/Loop Labyrinth/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>/Users/xianyao/Documents/Programs and Scripts/Unity/Loop Labyrinth/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+        <HintPath>/Users/xianyao/Documents/GitHub/Loop-Labyrinth/Loop Labyrinth/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
