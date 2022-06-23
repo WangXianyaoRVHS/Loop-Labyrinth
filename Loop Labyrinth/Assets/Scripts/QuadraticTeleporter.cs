@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// QuadraticTeleporter teleports objects on one edge of a plane to the opposite edge. It does this by creating 9 clones (phantoms) of a GameObject.
+// QuadraticTeleporter teleports objects on one edge of a 4-sided plane to the opposite edge. It does this by creating 9 clones (phantoms) of a GameObject, and when the real GameObject hits an edge, it is moved to the position as a phantom on the opposite side.
 public class QuadraticTeleporter : MonoBehaviour
 {
     public List<List<GameObject>> list_of_phantoms_and_their_originals = new List<List<GameObject>>();
@@ -27,28 +27,39 @@ public class QuadraticTeleporter : MonoBehaviour
         345
         678
         */
+        // Each phantom is associated with a certain index depending on their cardinal direction.
 
-        GameObject[] list_of_clonable_objects = GameObject.FindGameObjectsWithTag("Clonable");
+        GameObject[] list_of_clonable_objects = GameObject.FindGameObjectsWithTag("Clonable"); /* This is an array of everything that can teleport. 
+                                                                                                So, if there are things that can roll around the 
+                                                                                                board and you want it to loop around edges, 
+                                                                                                you give it the tag "Clonable" and it will be in this array. */
 
-        foreach (GameObject clonable_object in list_of_clonable_objects)
+        foreach (GameObject clonable_object in list_of_clonable_objects)    // Generate the 9 clones(phantoms) for each GameObject tagged as clonable.
         {
-            List<GameObject> phantoms_and_original = new List<GameObject>();
+            List<GameObject> phantoms_and_original = new List<GameObject>(); // The group of phantom and their respective original are stored together
+                                                                             // in seperate lists so the code can keep track of them.
             
             Color original_color = Random.ColorHSV(0f, 1f, 0f, 1f, 0f, 1f); // assign to clonable object a random colour
             Color phantom_color = original_color; phantom_color.a = 0.3f; // the phantoms are always more translucent than the original
 
-            var phantoms_and_original_under_a_GameObject = new GameObject();
+            var phantoms_and_original_under_a_GameObject = new GameObject(); // The phantoms and their original are placed under an
+                                                                             // empty GameObject so the scene hierarchy remains neat and tidy.
 
-            foreach (string offset_setting in phantom_offset_settings)
+            foreach (string offset_setting in phantom_offset_settings)  /* Since the 8 phantom represents the 8 cardinal directions, 
+                                                                           they need to be set a fixed distance away from the original
+                                                                           (specifically the width and breadth of the gameboard.) 
+                                                                           Each cardinal direction associated with a phantom is represented
+                                                                           by a short string in a 8 element long array so we dont need to use
+                                                                           a long if else chain to move the phantoms.*/
             {
                 GameObject original = clonable_object;
-                if (offset_setting == "O"){
+                if (offset_setting == "O"){     // "O" represents the original object and is there to exclude it from teleportation.
                     Renderer original_renderer = original.GetComponent<Renderer>();
                     original_renderer.material.color = original_color;
                     original.transform.parent = phantoms_and_original_under_a_GameObject.transform;
                     phantoms_and_original_under_a_GameObject.name = original.name;
 
-                    original.tag = "Original Cloned Object";
+                    original.tag = "Original Cloned Object";    // We change the tag of the original object to mark it as already undergone the cloning process so it doesn't repeat forever.
                     phantoms_and_original.Add(original);
                 }
                 else {
@@ -81,7 +92,7 @@ public class QuadraticTeleporter : MonoBehaviour
                 if (offset_setting != "O") {
                     phantom = phantoms_and_original[i];
 
-                    ensure_offset_and_same_height_between_original_and_phantom(original, phantom, phantom_offset_settings[i]);
+                    ensure_offset_and_same_height_between_original_and_phantom(original, phantom, phantom_offset_settings[i]);   // Here we ensure each phantom has the same height from the ground as the original.
                     
                 }
             }
@@ -95,7 +106,7 @@ public class QuadraticTeleporter : MonoBehaviour
             678
             */
 
-            if (original_x > x_offset / 2){
+            if (original_x > x_offset / 2){     // This is where the actual teleporting takes place. Once the original hits an edge, it is moved to the place of a phantom on the opposite side.
                 original.transform.position = phantoms_and_original[5].transform.position;
             } else if (original_x < -x_offset / 2){
                 original.transform.position = phantoms_and_original[3].transform.position;
@@ -107,7 +118,7 @@ public class QuadraticTeleporter : MonoBehaviour
         }
     }
 
-    void update_dimensions(){
+    void update_dimensions(){   // This is to account for how the x, y and z bounds of the playing board temporarily changes as it tilts.
 
         float x_rotation = this.transform.localRotation.eulerAngles.x;
         float y_rotation = this.transform.localRotation.eulerAngles.y;
@@ -118,7 +129,10 @@ public class QuadraticTeleporter : MonoBehaviour
         z_offset = this.GetComponent<MeshRenderer>().bounds.size.z * Mathf.Cos(z_rotation);
     }
 
-    void ensure_offset_and_same_height_between_original_and_phantom(GameObject original, GameObject phantom, string phantom_offset){
+    void ensure_offset_and_same_height_between_original_and_phantom(GameObject original, GameObject phantom, string phantom_offset){    /* What it does is to measure the distance from the original
+                                                                                                                                           to the ground with a raycast (light shooting a beam of
+                                                                                                                                           light directly downwards), do the same for the phantoms
+                                                                                                                                           and adjust the hieght of phantoms to match.*/
 
         float original_distance_from_ground = 0f;
         float phantom_distance_from_ground = 0f;
@@ -160,7 +174,7 @@ public class QuadraticTeleporter : MonoBehaviour
     }
 
 
-    Vector3 get_positional_offset_of_phantom(string offset_setting){
+    Vector3 get_positional_offset_of_phantom(string offset_setting){    // This is here to avoid long if else statements.
         float phantom_x_offset = 0;
         float phantom_z_offset = 0;
 
